@@ -10,7 +10,7 @@ class FocusedMenuHolder extends StatefulWidget {
   final Widget child;
   final double menuItemExtent;
   final double menuWidth;
-  final List<dynamic> menuItems;
+  final List<FocusedMenuItem> menuItems;
   final bool animateMenuItems;
   final BoxDecoration menuBoxDecoration;
   final Function onPressed;
@@ -114,7 +114,7 @@ class _FocusedMenuHolderState extends State<FocusedMenuHolder> {
 }
 
 class FocusedMenuDetails extends StatelessWidget {
-  final List<dynamic> menuItems;
+  final List<FocusedMenuItem> menuItems;
   final BoxDecoration menuBoxDecoration;
   final Offset childOffset;
   final double itemExtent;
