@@ -112,7 +112,7 @@ class _FocusedMenuHolderState extends State<FocusedMenuHolder> {
 }
 
 class FocusedMenuDetails extends StatelessWidget {
-  final List<FocusedMenuItem> menuItems;
+  final List<Widget> menuItems;
   final BoxDecoration menuBoxDecoration;
   final Offset childOffset;
   final double itemExtent;
