@@ -90,21 +90,21 @@ class _FocusedMenuHolderState extends State<FocusedMenuHolder> {
               return FadeTransition(
                   opacity: animation,
                   child: FocusedMenuDetails(
-                    itemExtent: widget.menuItemExtent,
-                    menuBoxDecoration: widget.menuBoxDecoration,
-                    child: widget.child,
-                    childOffset: childOffset,
-                    childSize: childSize,
-                    menuItems: widget.menuItems,
-                    blurSize: widget.blurSize,
-                    menuWidth: widget.menuWidth,
-                    blurBackgroundColor: widget.blurBackgroundColor,
-                    backgroundOpacity: widget.backgroundOpacity,
-                    alignment: widget.alignment,
-                    animateMenu: widget.animateMenuItems ?? true,
-                    bottomOffsetHeight: widget.bottomOffsetHeight ?? 0,
-                    menuOffset: widget.menuOffset ?? 0,
-                  ));
+                      itemExtent: widget.menuItemExtent,
+                      menuBoxDecoration: widget.menuBoxDecoration,
+                      child: widget.child,
+                      childOffset: childOffset,
+                      childSize: childSize,
+                      menuItems: widget.menuItems,
+                      blurSize: widget.blurSize,
+                      menuWidth: widget.menuWidth,
+                      blurBackgroundColor: widget.blurBackgroundColor,
+                      backgroundOpacity: widget.backgroundOpacity,
+                      alignment: widget.alignment,
+                      animateMenu: widget.animateMenuItems ?? true,
+                      bottomOffsetHeight: widget.bottomOffsetHeight ?? 0,
+                      menuOffset: widget.menuOffset ?? 0,
+                      duration: widget.duration));
             },
             fullscreenDialog: true,
             opaque: false));
@@ -126,6 +126,7 @@ class FocusedMenuDetails extends StatelessWidget {
   final double bottomOffsetHeight;
   final double menuOffset;
   final Alignment alignment;
+  final Duration duration;
 
   const FocusedMenuDetails(
       {Key key,
@@ -141,6 +142,7 @@ class FocusedMenuDetails extends StatelessWidget {
       @required this.alignment,
       @required this.backgroundOpacity,
       @required this.menuWidth,
+      @required this.duration,
       this.bottomOffsetHeight,
       this.menuOffset})
       : super(key: key);
@@ -180,7 +182,7 @@ class FocusedMenuDetails extends StatelessWidget {
               top: topOffset,
               left: leftOffset,
               child: TweenAnimationBuilder(
-                duration: Duration(milliseconds: 200),
+                duration: duration,
                 builder: (BuildContext context, value, Widget child) {
                   return Transform.scale(
                     scale: value,
