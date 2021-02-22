@@ -215,7 +215,7 @@ class FocusedMenuDetails extends StatelessWidget {
                       physics: BouncingScrollPhysics(),
                       itemBuilder: (context, index) {
                         FocusedMenuItem item = menuItems[index];
-                        FocusedMenuItem listItem = GestureDetector(
+                         Widget listItem = GestureDetector(
                             onTap: () {
                               if (item.active) {
                                 Navigator.pop(context);
