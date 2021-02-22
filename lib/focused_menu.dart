@@ -8,7 +8,7 @@ class FocusedMenuHolder extends StatefulWidget {
   final Widget child;
   final double menuItemExtent;
   final double menuWidth;
-  final List<FocusedMenuItem> menuItems;
+  final List<Widget> menuItems;
   final bool animateMenuItems;
   final BoxDecoration menuBoxDecoration;
   final Function onPressed;
