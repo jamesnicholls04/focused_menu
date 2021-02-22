@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:focused_menu/modals.dart';
 
+import 'modals.dart';
+
 class FocusedMenuHolder extends StatefulWidget {
   final Widget child;
   final double menuItemExtent;
@@ -213,9 +215,11 @@ class FocusedMenuDetails extends StatelessWidget {
                       physics: BouncingScrollPhysics(),
                       itemBuilder: (context, index) {
                         FocusedMenuItem item = menuItems[index];
-                        Widget listItem = GestureDetector(
+                        FocusedMenuItem listItem = GestureDetector(
                             onTap: () {
-                              Navigator.pop(context);
+                              if (item.active) {
+                                Navigator.pop(context);
+                              }
                               item.onPressed();
                             },
                             child: Container(
